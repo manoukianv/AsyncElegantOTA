@@ -33,7 +33,7 @@ class AsyncElegantOtaClass{
         void begin(AsyncWebServer *server, const char* username = "", const char* password = "");
         void loop();
         void restart();
-        void setPattern( const char* pattern = "");
+        void setFirmwareType( const int8_t firmware_type = -1);
 
     private:
         AsyncWebServer *_server;
@@ -44,7 +44,7 @@ class AsyncElegantOtaClass{
         String _username = "";
         String _password = "";
         bool _authRequired = false;
-        String _filename_pattern = "";
+        int8_t _firmware_type = -1;
 
 };
 

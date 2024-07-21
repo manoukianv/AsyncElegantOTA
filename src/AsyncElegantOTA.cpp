@@ -6,8 +6,8 @@ void AsyncElegantOtaClass::setID(const char* id){
     _id = id;
 }
 
-void AsyncElegantOtaClass::setPattern( const char* pattern){
-    _filename_pattern = pattern;
+void AsyncElegantOtaClass::setFirmwareType( const int8_t firmware_type){
+    _firmware_type = firmware_type;
 }
 
 
@@ -90,6 +90,15 @@ void AsyncElegantOtaClass::begin(AsyncWebServer *server, const char* username, c
             #endif
                 Update.printError(Serial);
                 return request->send(400, "text/plain", "OTA could not begin");
+            }
+        }
+
+        if (!index && len && (_firmware_type != -1)) {
+            if (data[0]==0x00 && data[1]==_firmware_type && data[2]==0xFF) {
+                data = data+3;
+                len = len-3;
+            }  else {
+                return request->send(400, "text/plain", "File is not compatible with this device");
             }
         }
 

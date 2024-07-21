@@ -29,11 +29,11 @@
 class AsyncElegantOtaClass{
 
     public:
-        void
-            setID(const char* id),
-            begin(AsyncWebServer *server, const char* username = "", const char* password = ""),
-            loop(),
-            restart();
+        void setID(const char* id);
+        void begin(AsyncWebServer *server, const char* username = "", const char* password = "");
+        void loop();
+        void restart();
+        void setPattern( const char* pattern = "");
 
     private:
         AsyncWebServer *_server;
@@ -44,6 +44,7 @@ class AsyncElegantOtaClass{
         String _username = "";
         String _password = "";
         bool _authRequired = false;
+        String _filename_pattern = "";
 
 };
 

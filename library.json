@@ -5,17 +5,17 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/ayushsharma82/AsyncElegantOTA.git"
+    "url": "https://github.com/manoukianv/AsyncElegantOTA.git"
   },
   "authors":
   [
     {
-      "name": "Ayush Sharma",
-      "email": "asrocks5@gmail.com",
+      "name": "Vincent Manoukian",
+      "email": "manoukianv@gmail.com",
       "maintainer": true
     }
   ],
-  "version": "2.2.9",
+  "version": "2.3.0",
   "frameworks": "arduino",
   "platforms": ["espressif8266", "espressif32"]
 }

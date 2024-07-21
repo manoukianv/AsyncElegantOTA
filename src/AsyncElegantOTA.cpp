@@ -6,6 +6,11 @@ void AsyncElegantOtaClass::setID(const char* id){
     _id = id;
 }
 
+void AsyncElegantOtaClass::setPattern( const char* pattern){
+    _filename_pattern = pattern;
+}
+
+
 void AsyncElegantOtaClass::begin(AsyncWebServer *server, const char* username, const char* password){
     _server = server;
 
